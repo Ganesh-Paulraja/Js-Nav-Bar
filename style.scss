@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+header {
+  nav {
+    width: 100%;
+    background: blue;
+    height: 58px;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .nav-logo {
+      color: white;
+      a {
+        color: #fff;
+        text-decoration: none;
+        padding-left: 20px;
+      }
+      a:hover {
+        color: red;
+      }
+    }
+    .drop-down {
+      display: flex;
+      align-items: center;
+    }
+    ul {
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+      display: flex;
+      li {
+        list-style-type: none;
+        margin-left: 20px;
+        a {
+          color: #fff;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        a:hover {
+          color: red;
+        }
+      }
+      li:first-child {
+        margin-left: 0;
+      }
+    }
+    button {
+      position: absolute;
+      right: 20px;
+      width: 100px;
+      height: 30px;
+      background-color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: blue;
+      color: white;
+      border: 2px solid white;
+    }
+    @media only screen and (max-width: 999px) {
+      .drop-down {
+        background-color: blue;
+        width: 250px;
+        height: calc(100vh - 58px);
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        display: block;
+        transform: translateX(300px);
+        transition: 0.5s;
+        ul {
+          position: static;
+          transform: none;
+          display: block;
+          li {
+            margin-left: 20px;
+            margin-top: 20px;
+          }
+        }
+        button {
+          position: static;
+          margin-left: 18px;
+          margin-top: 30px;
+        }
+      }
+      .active-drop {
+        transform: translateX(0);
+      }
+      .han-burg-icon {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 50px;
+        cursor: pointer;
+        span {
+          display: block;
+          width: 40px;
+          height: 5px;
+          margin-top: 7px;
+          background-color: #fff;
+          transition: 0.5s;
+        }
+      }
+      .close-icon {
+        span:first-child {
+          transform: rotate(45deg) translateY(8px);
+        
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg) translateY(-8px);
+        }
+        span:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+    @media only screen and (max-width: 499px) {
+      .han-burg-icon {
+        right: 15px;
+        transform: scale(0.7);
+      }
+    }
+  }
+}

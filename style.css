@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header nav {
+  width: 100%;
+  background: blue;
+  height: 58px;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+header nav .nav-logo {
+  color: white;
+}
+header nav .nav-logo a {
+  color: #fff;
+  text-decoration: none;
+  padding-left: 20px;
+}
+header nav .nav-logo a:hover {
+  color: red;
+}
+header nav .drop-down {
+  display: flex;
+  align-items: center;
+}
+header nav ul {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+}
+header nav ul li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+header nav ul li a:hover {
+  color: red;
+}
+header nav ul li:first-child {
+  margin-left: 0;
+}
+header nav button {
+  position: absolute;
+  right: 20px;
+  width: 100px;
+  height: 30px;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+header nav button:hover {
+  background-color: blue;
+  color: white;
+  border: 2px solid white;
+}
+@media only screen and (max-width: 999px) {
+  header nav .drop-down {
+    background-color: blue;
+    width: 250px;
+    height: calc(100vh - 58px);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: block;
+    transform: translateX(300px);
+    transition: 0.5s;
+  }
+  header nav .drop-down ul {
+    position: static;
+    transform: none;
+    display: block;
+  }
+  header nav .drop-down ul li {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  header nav .drop-down button {
+    position: static;
+    margin-left: 18px;
+    margin-top: 30px;
+  }
+  header nav .active-drop {
+    transform: translateX(0);
+  }
+  header nav .han-burg-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+  }
+  header nav .han-burg-icon span {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-top: 7px;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+  header nav .close-icon span:first-child {
+    transform: rotate(45deg) translateY(8px);
+  }
+  header nav .close-icon span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-9px);
+  }
+  header nav .close-icon span:nth-child(2) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 499px) {
+  header nav .han-burg-icon {
+    right: 15px;
+    transform: scale(0.7);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
